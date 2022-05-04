@@ -1,20 +1,19 @@
 // this one spawns all the blocks of cool stuff content idk pls help me Im trapped ahhhhh
 
 //getting the text files into seperate blocks into content array
-let text =
-    "!NAME - DESCRIPTION - LINK - TYPE - SUBTYPE - DATE - ORDER;" +
-    "Guns X Magic | fun game about fighting escaped monsters and controlled robots by an evil entity || Game | Action | May 8, 2022 | 5;" +
-    "A* Algorithm | Show the process of the A* algorithm, along with demonstrating cool properties and situations of it || Step by Step | Algorithm | May 4, 2022 | 1;" +
-    "Pixel Art | Create Pixel Art with Revolutionary new type of mapping || Tool | Art | May 5, 2022 | 2;" +
-    "Boids | Learn a simple AI technique and look at simple visualizations in the process || Step by Step | Visualization | May 9, 2022 | 6;" +
-    "Spacebar Spam | Test how quickly you can press your spacebar || Game | Test | May 6, 2022 | 3;" +
-    "idk | this is test bruh bruh || Step by Step | Algorithm | May 7, 2022 | 4";
+let text;
 let content = []
 let allData = [];
 let currentData = [];
+
 function ReadText() {
-    content = text.split(";");
+    content = this.responseText.split(";");
 }
+
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", ReadText);
+oReq.open("GET", "content.txt");
+oReq.send();
 
 function UpdateCurrentData() {
     var sortBy = $('input[name="sort"]:checked').val();

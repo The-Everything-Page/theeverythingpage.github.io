@@ -14,6 +14,8 @@ function ReadText() {
 
 
 function UpdateCurrentData() {
+    
+
     var sortBy = $('input[name="sort"]:checked').val();
     switch (sortBy) {
         case "fav":
@@ -31,8 +33,24 @@ function UpdateCurrentData() {
         case "type":
             UpdateCurrentDataByType();
             break;
+        default:
+            currentData = allData.slice();
+            break;
 
     }
+    var tag = $('input[name="tag"]:checked').val();
+    if (tag != "All") {
+        var tempData = [];
+        currentData.forEach(function (d) {
+            if (d[3] != null) {
+                if (d[3].includes(tag)) {
+                    tempData.push(d);
+                }
+            }
+        })
+        currentData = tempData.slice();
+    }
+
     $("#indexGrid").fadeTo(0, 0);
     $("#indexGrid").fadeTo("fast", 1);
 }
@@ -70,7 +88,12 @@ $(document).ready(function () {
     req.send();
     ReadText();
     GenerateContent();
+
     $('#sortBy').change(function () {
+        UpdateCurrentData();
+        UpdateElements();
+    });
+    $('#tags').change(function () {
         UpdateCurrentData();
         UpdateElements();
     });

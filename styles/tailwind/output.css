@@ -472,12 +472,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: block;
 }
 
-.font-primary {
-  font-family: Red Hat Display, sans-serif;
+.p-16 {
+  padding: 4rem;
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .font-specialty {
   font-family: Abril Fatface, cursive;
+}
+
+.font-primary {
+  font-family: Red Hat Display, sans-serif;
 }
 
 .text-8xl {
@@ -499,3 +507,142 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(82 209 220 / var(--tw-text-opacity));
 }
+
+.blockContainer {
+  border: 3px solid black;
+  border-radius: 50px;
+  margin: 50px;
+  text-align:center;
+}
+
+.blockGrid {
+  display: flex;
+  justify-content: center;
+}
+
+.block {
+  text-align: left;
+  border: 3px solid black;
+  border-radius: 50px;
+  width: 25%;
+  margin: 35%;
+  height: 200px;
+  padding: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr .5fr;
+  position: absolute;
+}
+
+.block:hover{
+  background-color: gray;
+}
+
+/*Styling Selectbox*/
+
+/*#region THANKS TO VINCENT DURAND DROPDOWN*/
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+body {
+}
+
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+
+.list-choice {
+  width: 300px;
+  margin: 1em auto;
+  position: relative;
+  cursor: pointer;
+  z-index:5;
+}
+
+.list-choice input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.list-choice-title {
+  width: 100%;
+  display: block;
+  background: #00c1d4;
+  text-align: center;
+  padding: 0.55em 1em;
+  box-sizing: border-box;
+  color: #FFF;
+  text-shadow: 0 1px 0 #CACACA;
+  border-radius: 15px;
+  border: 3px solid #001576;
+}
+
+.list-choice:hover .list-choice-title {
+  border-radius: 0.2em 0.2em 0 0;
+}
+
+.list-choice-objects label:nth-last-of-type(1) span {
+  border-radius: 0 0 0.2em 0.2em;
+}
+
+.list-choice input[type="radio"] + span {
+  color: #000;
+  background: #D8D8D8;
+  padding: 0.55em 1em;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 100%;
+}
+
+.list-choice-objects {
+  position: absolute;
+  top: 0;
+  padding-top: 2.5em;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 250ms ease;
+}
+
+.list-choice:hover .list-choice-objects input[type="radio"] + span {
+  position: relative;
+  top: 0;
+  transition: all 250ms ease-in-out;
+}
+
+.list-choice:hover input[type="radio"] + span:hover {
+  background: #BBB;
+}
+
+.list-choice:hover input[type="radio"]:checked + span:hover {
+  background: #74D68E;
+}
+
+.list-choice input[type="radio"]:checked + span {
+  background: #74D68E;
+  position: absolute;
+  top: 0em;
+  border-radius: 15px;
+  border: 3px solid #004a1a;
+  z-index: 10;
+}
+
+.list-choice:hover input[type="radio"]:checked + span {
+  border-radius: 0;
+}
+
+.list-choice:hover .list-choice-objects label:nth-last-of-type(1) input[type="radio"]:checked + span {
+  border-radius: 0 0 0.2em 0.2em;
+}
+
+.list-choice:hover .list-choice-objects {
+  max-height: 540px;
+}
+
+/*#endregion*/

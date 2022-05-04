@@ -33,6 +33,8 @@ function UpdateCurrentData() {
             break;
 
     }
+    $("#indexGrid").fadeTo(0, 0);
+    $("#indexGrid").fadeTo("fast", 1);
 }
 function UpdateCurrentDataByName() {
     currentData = allData.slice();
@@ -72,6 +74,8 @@ $(document).ready(function () {
         UpdateCurrentData();
         UpdateElements();
     });
+    $("#indexGrid").fadeTo(0, 0);
+    $("#indexGrid").fadeTo("fast", 1);
 });
 function GenerateContent() {
     content.forEach(function (block) {

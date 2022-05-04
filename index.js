@@ -7,13 +7,11 @@ let allData = [];
 let currentData = [];
 
 function ReadText() {
-    content = this.responseText.split(";");
+    console.log(text);
+    content = text.split(";");
 }
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener("load", ReadText);
-oReq.open("GET", "content.txt");
-oReq.send();
+
 
 function UpdateCurrentData() {
     var sortBy = $('input[name="sort"]:checked').val();
@@ -62,6 +60,12 @@ function UpdateCurrentDataByType() {
 }
 //the actual process
 $(document).ready(function () {
+    var req = new XMLHttpRequest();
+    req.onload = function () {
+        text = (this.responseText);
+    };
+    req.open('GET', 'content.txt',false);
+    req.send();
     ReadText();
     GenerateContent();
     $('#sortBy').change(function () {

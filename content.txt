@@ -1,4 +1,4 @@
-!NAME - DESCRIPTION - LINK - TYPE - SUBTYPE - DATE - ORDER
+!NAME - DESCRIPTION - LINK - TYPE - SUBTYPE - DATE - ORDER;
 Guns X Magic | fun game about fighting escaped monsters and controlled robots by an evil entity || Game | Action | May 8, 2022 | 5;
 A* Algorithm | Show the process of the A* algorithm, along with demonstrating cool properties and situations of it || Step by Step | Algorithm | May 4, 2022 | 1;
 Pixel Art | Create Pixel Art with Revolutionary new type of mapping || Tool | Art | May 5, 2022 | 2;

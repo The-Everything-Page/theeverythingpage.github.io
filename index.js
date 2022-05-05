@@ -126,7 +126,7 @@ function CreateOffData(data) {
     if (data[0][0] == "!") { return;}
     // complex html bs
     var obj = "" +
-        "<div class=\"block\" style=\"right:XPOSpx; top:YPOSpx;     border: 3px solid TCOL;\">" +
+        "<div class=\"block\" style=\"right:XPOSpx; top:YPOSpx;     border: 3px solid TCOL;\" onclick=\"window.location = 'LINK';\">" +
         "                <div width=\"5%\">" +
         "                    <h2>NAME</h2>" +
         "                    <br />" +

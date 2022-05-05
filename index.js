@@ -126,15 +126,15 @@ function CreateOffData(data) {
     if (data[0][0] == "!") { return;}
     // complex html bs
     var obj = "" +
-        "<div class=\"block\" style=\"right:XPOSpx; top:YPOSpx\">" +
+        "<div class=\"block\" style=\"right:XPOSpx; top:YPOSpx;     border: 3px solid TCOL;\">" +
         "                <div width=\"5%\">" +
         "                    <h2>NAME</h2>" +
         "                    <br />" +
         "                    <p style=\" max-width: 300px; overflow-wrap: break-word\">DESC</p>" +
         "                    <br />" +
         "                    <ul style=\"position:absolute; font-size: 12px\">" +
-        "                        <li>" +
-        "                            TYPE" +
+        "                        <li style=\"color:TCOL\">" +
+        "                           TYPE" +
         "                        </li>" +
         "                        <li>" +
         "                            SUBT" +
@@ -156,7 +156,6 @@ function CreateOffData(data) {
         "";
 
     //!NAME - DESCRIPTION - LINK - TYPE - SUBTYPE - DATE - ORDER;
-
     obj = obj.replace("NAME", data[0]);
     obj = obj.replace("DESC", data[1]);
     obj = obj.replace("LINK", data[2]);
@@ -166,12 +165,19 @@ function CreateOffData(data) {
     obj = obj.replace("ORDR", data[6]);
     obj = obj.replace("XPOS", -(numberOfCreations % 2)* 600+300);
     obj = obj.replace("YPOS", Math.floor(numberOfCreations / 2)* 320 + 250);
-
+    obj = obj.replace("TCOL", TypeColor(data[3]) );
+    obj = obj.replace("TCOL", TypeColor(data[3]) );
     $("#indexGrid").append(obj);
 
     numberOfCreations++;
 }
-
+function TypeColor(type) {
+    if (type.includes("Game")) { return "green"; }
+    if (type.includes("Algorithm")){ return "blue"; }
+    if (type.includes("Visualization")) { return "purple"; }
+    if (type.includes("Tool")) { return "#AB7A00"; }
+    return "black";
+}
 function UpdateElements() {
     $("#indexGrid").empty();
     numberOfCreations = 0;

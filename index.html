@@ -16,19 +16,25 @@
 
 
 
-    <script src="index.js"></script>
+    <script src="./js/index.js"></script>
 
 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./styles/css/index.css">
+
+    <!--Tailwind-->
+    <link rel="stylesheet" href="./styles/tailwind/output.css">
+
+    <!--Google Fonts API-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
 
 </head>
 
 <body>
-    <!-- your content here... -->
-    <div id ="blockContainer"class="blockContainer" >
-        <h1>The EVERYTHING Page</h1><br />
-        <p>by: Tristan Winata</p><br />
-        <!--#region VINCENT DURAND DROPDOWN CODE-->
+    <div class="blockContainer p-16">
+        <h1 class="font-specialty text-8xl text-primary-dark">The EVERYTHING Page</h1><br />
+        <p class="font-primary text-4xl text-primary-light">by: Tristan Winata</p><br />
         <div class="dropdown-grid">
             <div class="list-choice">
                 <div class="list-choice-title">
@@ -38,7 +44,7 @@
                     </span>
                 </div>
                 <div class="list-choice-objects">
-                    <form id="sortBy">
+                    <form id="sortBy" class="pb-10">
                         <label>
                             <input type="radio" name="sort" value="fav" />                         <span>My Favorites</span>
                         </label>
@@ -62,7 +68,7 @@
             <div class="list-choiceB">
                 <div class="list-choice-titleB">Tags</div>
                 <div class="list-choice-objectsB">
-                    <form id="tags">
+                    <form id="tags" class="">
                         <label>
                             <input type="radio" name="tag" value="All" checked="on"/>               <span>All</span>
                         </label>
@@ -87,13 +93,10 @@
         <!--#endregion-->
 
 
-
-        <div id="indexGrid" class="blockGrid">
-
-
-
-
+        <div class="p-20" id="deadspace">
+            <div id="indexGrid" class="blockGrid p-4"></div>
         </div>
+    </div>
     </div>
 
 </body>

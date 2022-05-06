@@ -125,12 +125,16 @@ let numberOfCreations = 0;
 function CreateOffData(data) {
     if (data[0][0] == "!") { return;}
     // complex html bs
+    // bruh just write html and then parse some json to add the data to it
+
+    // TODO: this ^^
     var obj = "" +
+        "<div class='deadspace'>" +
         "<div class=\"block\" style=\"right:XPOSpx; top:YPOSpx;     border: 3px solid TCOL;\" onclick=\"window.location = 'LINK';\">" +
         "                <div width=\"5%\">" +
         "                    <h2>NAME</h2>" +
         "                    <br />" +
-        "                    <p style=\" max-width: 300px; overflow-wrap: break-word\">DESC</p>" +
+        "                    <p style=\"\">DESC</p>" +
         "                    <br />" +
         "                    <ul style=\"position:absolute; font-size: 12px\">" +
         "                        <li style=\"color:TCOL\">" +
@@ -153,6 +157,7 @@ function CreateOffData(data) {
         "                    IMAGE" +
         "                </div>" +
         "            </div>" +
+        "        </div>";
         "";
 
     //!NAME - DESCRIPTION - LINK - TYPE - SUBTYPE - DATE - ORDER;
@@ -171,6 +176,11 @@ function CreateOffData(data) {
 
     numberOfCreations++;
 }
+
+// add padding to #indexGrid
+const indexGrid = document.getElementById("indexGrid");
+indexGrid.style.padding = "64px";
+
 function TypeColor(type) {
     if (type.includes("Game")) { return "green"; }
     if (type.includes("Algorithm")){ return "blue"; }

@@ -1,0 +1,77 @@
+﻿.tab-animate{
+    background-color:gray;
+    position:absolute;
+    width:300px;
+    height:900px;
+
+    border: 1px solid black;
+}
+.tab-files {
+    padding:30px;
+    background-color:lightgray;
+    position: absolute;
+    width: 240px;
+    height: 840px;
+    left: calc(100% - 310px);
+    text-align:center;
+    
+    border: 1px solid ;
+    
+}
+.header-option{
+    color:darkorange;
+}
+.input-size{
+    width:50px;
+}
+.tab-drawing{
+    text-align:center;
+}
+
+/*code by Matt Smith on Codepen*/
+
+     
+        /* toggle in label designing */
+        .toggle {
+            position : relative ;
+            display : inline-block;
+            width : 50px;
+            height : 26px;
+            background-color: red;
+            border-radius: 500px;
+            border: 1px solid black;
+        }
+                
+        /* After slide changes */
+        .toggle:after {
+            content: '';
+            position: absolute;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            background-color: white;
+            top: 2px; 
+            left: 2px;
+            transition:  all 0.5s;
+        }
+                
+        /* Toggle text */
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+                
+        /* Checkbox checked effect */
+        .checkbox:checked + .toggle::after {
+            left : 23px; 
+        }
+                
+        /* Checkbox checked toggle label bg color */
+        .checkbox:checked + .toggle {
+            background-color: green;
+        }
+                
+        /* Checkbox vanished */
+        .checkbox { 
+            display : none;
+        }

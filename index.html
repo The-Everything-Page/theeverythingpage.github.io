@@ -6,12 +6,12 @@
 
     <title>The EVERYTHING Page</title>
     <meta name="description" content="Everything I make :).">
-    <meta name="author" content="Tristan Winata">
+    <meta name="author" content="Porky Productions">
 
     <meta property="og:title" content="The EVERYTHING PAGE">
     <meta property="og:type" content="website">
     <meta property="og:description" content="Tutorials, Projects, Cool Looking Stuff, Whatever I feel.">
-
+    <meta name="color-scheme" content="dark light" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
@@ -37,26 +37,57 @@
         <p class="font-primary text-4xl text-primary-light">by: Tristan Winata</p><br />
         <div class="dropdown-grid">
             <div class="list-choice">
-                <div class="list-choice-title">Sort By</div>
+                <div class="list-choice-title">
+                    Sort By
+                    <span class ="list-arrow"style="position:absolute; text-align:right">
+                        &#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#160&#9664
+                    </span>
+                </div>
                 <div class="list-choice-objects">
                     <form id="sortBy" class="p-4">
                         <label>
-                            <input type="radio" name="sort" value="fav" />                         <span>--My Favorites--</span>
+                            <input type="radio" name="sort" value="fav" />                         <span>My Favorites</span>
                         </label>
                         <label>
-                            <input type="radio" name="sort" value="name" />                         <span>--Name--</span>
+                            <input type="radio" name="sort" value="name" />                         <span>Name</span>
                         </label>
                         <label>
-                            <input type="radio" name="sort" value="new" />                         <span>--Newest--</span>
+                            <input type="radio" name="sort" value="new" />                         <span>Newest</span>
                         </label>
                         <label>
-                            <input type="radio" name="sort" value="old" />                         <span>--Oldest--</span>
+                            <input type="radio" name="sort" value="old" />                         <span>Oldest</span>
                         </label>
                         <label>
-                            <input type="radio" name="sort" value="type" />                         <span>--Type--</span>
+                            <input type="radio" name="sort" value="tag" />                         <span>Tag</span>
                         </label>
 
                     </form>
+                    
+                </div>
+            </div>
+            <div class="list-choiceB">
+                <div class="list-choice-titleB">Tags</div>
+                <div class="list-choice-objectsB">
+                    <form id="tags">
+                        <label>
+                            <input type="radio" name="tag" value="All" checked="on"/>               <span>All</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="tag" value="Game" />                          <span>Games</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="tag" value="Algorithm" />                     <span>Algorithms</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="tag" value="Visualization" />                 <span>Visualizations</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="tag" value="Tool" />                          <span>Tools</span>
+                        </label>
+                    </form>
+                    
+                </div>
+            </div>
         </div>
 
         <!--#endregion-->

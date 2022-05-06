@@ -1,1 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>Pixel Art - The EVERYTHING Page</title>
+    <meta name="description" content="Everything I make :).">
+    <meta name="author" content="Porky Productions">
+
+    <meta property="og:title" content="The EVERYTHING PAGE">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Tutorials, Projects, Cool Looking Stuff, Whatever I feel.">
+    <meta name="color-scheme" content="dark light" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+
+    <script src="pixelart.js"></script>
+
+
+    <link rel="stylesheet" href="pixelart.css">
+</head>
+<body onmousemove="GetMousePosMap(event)">
+    <div class="tab-animate">
+
+    </div>
+    <div class="tab-files">
+
+        <h3 class="header-option">CANVAS SIZE</h3><hr /><br />
+        MAP: 
+        <input id="size-map" class="input-size" value="32" />
+      
+        <br />
+        SCENE: 
+        <input id="size-scene" class="input-size" value="32" />
+
+        <button onclick="On_SizeMapButton()">Confirm Size Change</button><br /><br />
+        See Lines
+        <input type="checkbox" id="switch-seeLines" class="checkbox" checked="on"/>
+        <label for="switch-seeLines" class="toggle">
+
+        </label>
+    </div>
+    <div class=" tab-drawing">
+        <canvas id="canvas-map" style="border: 1px solid; width:450px; height: 450px"></canvas>
+    </div>
+    <div class="tab-drawing">
+        <canvas id="canvas-reg" style="border: 1px solid; width:450px; height: 450px"></canvas>
+    </div>
+
+
+</body>
+</html>

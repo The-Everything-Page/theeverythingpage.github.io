@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 .blockContainer {
-    border: 3px solid black;
+    border: 3px solid;
     border-radius: 50px;
     margin: 50px;
+    padding: 50px;
     text-align:center;
 }
 
 .blockGrid {
-    display: flex;
-    justify-content: center;
+    padding: 60px;
 }
 
 .block {
     text-align: left;
-    border: 3px solid black;
     border-radius: 50px;
-    width: 25%;
+    width: 35%;
+    height: 35%;
     margin: 35%;
     height: 200px;
     padding: 50px;
@@ -27,13 +27,16 @@
     display: grid;
     grid-template-columns: 1fr .5fr;
     position: absolute;
-    
-    
 }
 .block:hover{
     background-color: gray;
 
 }
+
+.deadspace {
+    padding: 64px;
+}
+
 /*Styling Selectbox*/
 /*#region THANKS TO VINCENT DURAND DROPDOWN*/
 @import url(https://fonts.googleapis.com/css?family=Raleway);
@@ -74,6 +77,12 @@ body {
 .list-choice:hover .list-choice-title {
     border-radius: 0.2em 0.2em 0 0;
 }
+    .list-choice:hover .list-choice-title > .list-arrow {
+        transform-origin: 94% 7px;
+        transition: transform 0.1s;
+        transform: rotate(-90deg);
+    }
+
 
 .list-choice-objects label:nth-last-of-type(1) span {
     border-radius: 0 0 0.2em 0.2em;
@@ -105,6 +114,7 @@ body {
     position: relative;
     top: 0;
     transition: all 250ms ease-in-out;
+    
 }
 
 .list-choice:hover input[type="radio"] + span:hover {
@@ -118,10 +128,12 @@ body {
 .list-choice input[type="radio"]:checked + span {
     background: #74D68E;
     position: absolute;
-    top: 0em;
+    top: 0.05em;
     border-radius: 15px;
     border: 3px solid #004a1a;
+
     z-index: 10;
+    color: white;
 }
 
 .list-choice:hover input[type="radio"]:checked + span {

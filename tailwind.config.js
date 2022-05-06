@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['index.html', 'index.js'],
+  content: ['index.html', 'index.js', 'pixelart.html'],
   theme: {
     fontFamily: {
       primary: ['Red Hat Display, sans-serif'],

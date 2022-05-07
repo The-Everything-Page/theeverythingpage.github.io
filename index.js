@@ -17,6 +17,8 @@ function UpdateCurrentData() {
     
 
     var sortBy = $('input[name="sort"]:checked').val();
+    console.log(sortBy);
+
     switch (sortBy) {
         case "fav":
             currentData = allData.slice();
@@ -72,10 +74,12 @@ function UpdateCurrentDataByNewest() {
     });
 }
 function UpdateCurrentDataByType() {
-    currentData = allData.slice().reverse();
+    currentData = allData.slice();
     currentData.sort(function (a, b) {
         return a[3] === b[3] ? 0 : a[3] < b[3] ? -1 : 1;
     });
+    console.log(currentData);
+
 
 }
 //the actual process

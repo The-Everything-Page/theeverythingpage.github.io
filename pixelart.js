@@ -17,16 +17,10 @@ function Update() {
     ctxmap.clearRect(0, 0, canvasSize, canvasSize);
     var pixelSize = canvasSize / sizeMap;
 
-    if (mouseDown) {
-        DrawOnMap();
-    }
-
-
+   
     DrawPixelDataMap();
 
-    if (I_SeeLines()) {
-        DrawLines();
-    }
+    
 
 
 
@@ -36,7 +30,13 @@ function Update() {
 
     if (I_MouseInBoundsMap()) {
         //console.log(mouseY);
+        if (mouseDown) {
+            DrawOnMap();
+        }
         DrawRectMap(Math.floor(mouseX / pixelSize) * pixelSize, Math.floor(mouseY / (pixelSize)) * pixelSize, pixelSize, pixelSize, 0.2)
+    }
+    if (I_SeeLines()) {
+        DrawLines();
     }
 }
 

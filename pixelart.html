@@ -27,26 +27,31 @@
     <div class="tab-files">
 
         <h3 class="header-option">CANVAS SIZE</h3><hr /><br />
-        MAP: 
+        MAP:
         <input id="size-map" class="input-size" value="32" />
-      
+
         <br />
-        SCENE: 
+        SCENE:
         <input id="size-scene" class="input-size" value="32" />
 
         <button onclick="On_SizeMapButton()">Confirm Size Change</button><br /><br />
         See Lines
-        <input type="checkbox" id="switch-seeLines" class="checkbox" checked="on"/>
+        <input type="checkbox" id="switch-seeLines" class="checkbox" checked="on" />
         <label for="switch-seeLines" class="toggle">
 
         </label>
     </div>
+    <div class="tab-pallet">
+        <h3 class="header-option">COLORS</h3><hr /><br />
+
+        <input type="color" id="color-brush" name="color-brush" value="#000">
+        <label for="color-brush">Brush</label>
+
+    </div>
     <div class=" tab-drawing">
-        <canvas id="canvas-map" style="border: 1px solid; width:450px; height: 450px"></canvas>
+        <canvas id="canvas-map" style="border: 1px solid; width:650px; height: 650px; "></canvas>
     </div>
-    <div class="tab-drawing">
-        <canvas id="canvas-reg" style="border: 1px solid; width:450px; height: 450px"></canvas>
-    </div>
+    
 
 
 </body>

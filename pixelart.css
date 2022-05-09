@@ -18,14 +18,39 @@
     border: 1px solid ;
     
 }
+.tab-pallet {
+    padding: 30px;
+    background-color:azure;
+    position: absolute;
+    width: 240px;
+    height: 840px;
+    left: calc(100% - 620px);
+    text-align: center;
+    border: 1px solid;
+}
+
 .header-option{
     color:darkorange;
 }
 .input-size{
     width:50px;
 }
-.tab-drawing{
-    text-align:center;
+.tab-drawing {
+    text-align: center;
+    position: relative;
+    top: 450px;
+}
+#canvas-map {
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 /*code by Matt Smith on Codepen*/

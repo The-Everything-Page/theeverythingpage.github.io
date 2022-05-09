@@ -1,5 +1,5 @@
 let ctxmap;
-const canvasSize = 450;
+const canvasSize = 650;
 let sizeMap = 32;
 
 
@@ -11,6 +11,11 @@ $(document).ready(function () {
     setInterval(function () {
         Update();
     }, 5);
+
+    document.getElementById('color-brush').onchange = function () {
+        // do whatever you want with value
+        brushColor = this.value;
+    }
 })
 
 function Update() {
@@ -33,7 +38,7 @@ function Update() {
         if (mouseDown) {
             DrawOnMap();
         }
-        DrawRectMap(Math.floor(mouseX / pixelSize) * pixelSize, Math.floor(mouseY / (pixelSize)) * pixelSize, pixelSize, pixelSize, 0.2)
+        DrawRectMap(Math.floor(mouseX / pixelSize) * pixelSize, Math.floor(mouseY / (pixelSize)) * pixelSize, pixelSize, pixelSize, 0.2, brushColor)
     }
     if (I_SeeLines()) {
         DrawLines();
@@ -60,7 +65,6 @@ function CreatePixelDataMap() {
             pixelDataMap[x].push([""]);
         }
     }
-    console.log(pixelDataMap);
 }
 function DrawPixelDataMap() {
     var pixelSize = canvasSize / sizeMap;
@@ -88,7 +92,7 @@ function DrawPixelDataMap() {
 function DrawOnMap() {
     var pixelSize = canvasSize / sizeMap;
 
-    pixelDataMap[Math.floor(mouseX / pixelSize)][Math.floor(mouseY / pixelSize)] = color;
+    pixelDataMap[Math.floor(mouseX / pixelSize)][Math.floor(mouseY / pixelSize)] = brushColor;
 }
 
 function DrawRectMap(x, y, w, h, a, c) {
@@ -125,7 +129,7 @@ let mouseX = 0;
 let mouseY = 0;
 let mlbMode = "brush";
 let mrbMode = "erase";
-let color = "black";
+let brushColor = "black";
 var mouseDown = 0;
 window.onload = () => {
     document.body.onmousedown = function () {
@@ -139,14 +143,12 @@ function GetMousePosMap(evt) {
     var rect = $("#canvas-map")[0].getBoundingClientRect();
     mouseX = evt.clientX - rect.left;
     mouseY = evt.clientY - rect.top;
-    console.log(mouseY);
 }
 function I_MouseInBoundsMap() {
     return (mouseX > 0 & mouseX < canvasSize & mouseY > 0 & mouseY < canvasSize);
 }
 function On_SizeMapButton() {
     sizeMap = I_SizeMap();
-    console.log(sizeMap);
 }
 
 function I_SizeMap() {

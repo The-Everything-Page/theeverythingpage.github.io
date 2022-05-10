@@ -17,7 +17,6 @@ $(document).ready(function () {
         brushColor = this.value;
     }
     
-    document.addEventListener('contextmenu', event => event.preventDefault());
 
 })
 
@@ -40,6 +39,9 @@ function Update() {
         //console.log(mouseY);
         if (mouseDown) {
             DrawOnMap();
+        }
+        if (mouseRightDown) {
+            EraseOnMap();
         }
         DrawRectMap(Math.floor(mouseX / pixelSize) * pixelSize, Math.floor(mouseY / (pixelSize)) * pixelSize, pixelSize, pixelSize, 0.2, brushColor)
     }
@@ -97,6 +99,11 @@ function DrawOnMap() {
 
     pixelDataMap[Math.floor(mouseX / pixelSize)][Math.floor(mouseY / pixelSize)] = brushColor;
 }
+function EraseOnMap() {
+    var pixelSize = canvasSize / sizeMap;
+
+    pixelDataMap[Math.floor(mouseX / pixelSize)][Math.floor(mouseY / pixelSize)] = "";
+}
 
 function DrawRectMap(x, y, w, h, a, c) {
     ctxmap.save();
@@ -134,11 +141,20 @@ let mlbMode = "brush";
 let mrbMode = "erase";
 let brushColor = "black";
 var mouseDown = 0;
+var mouseRightDown = 0;
 window.onload = () => {
-    document.body.onmousedown = function () {
+    document.body.onmousedown = function (event) {
+        if (event.which == 3) {
+            ++mouseRightDown;
+            return;
+        }
         ++mouseDown;
     }
-    document.body.onmouseup = function () {
+    document.body.onmouseup = function (event) {
+        if (event.which == 3) {
+            --mouseRightDown;
+            return;
+        }
         --mouseDown;
     }
 }

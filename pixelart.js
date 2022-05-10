@@ -16,7 +16,9 @@ $(document).ready(function () {
         // do whatever you want with value
         brushColor = this.value;
     }
-    
+    window.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    }, false);
 
 })
 

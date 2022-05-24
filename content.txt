@@ -5,3 +5,4 @@ Pixel Art     | Create Pixel Art with revolutionary, experimental type of mappin
 Boids         | Learn a simple AI technique and look at simple visualizations in the process                        |             | Visualization| Step by Step	| May 9, 2022 | 6;
 Spacebar Spam | Test how quickly you can press your spacebar                                                        |             | Game         | Test          | May 6, 2022 | 3;
 Idk           | this is test bruh bruh                                                                              |             | Algorithm	| Step by Step  | May 7, 2022 | 4
+True to the Blue| My AP Human Geogrphy final project about a blue collar worker struggling through life.			|
